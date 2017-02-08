@@ -31,11 +31,11 @@ const lstat = require('lstat');
 ### lstat(*path*)
 
 *path*: `String`  
-Return: [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+Return: `Promise<fs.Stats>`
 
-Almost the same as the built-in [`fs.lstat`](https://nodejs.org/api/fs.html#fs_fs_lstat_path_callback), but:
+Almost the same as the [Node.js](https://nodejs.org/) built-in [`fs.lstat`](https://nodejs.org/api/fs.html#fs_fs_lstat_path_callback), but:
 
-* [Promisified](https://promise-nuggets.github.io/articles/07-wrapping-callback-functions.html)
+* It returns [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), instead of passing the result to its callback function.
 * The first parameter does't accept `Buffer` by design. Just use `String` instead.
 
 ```javascript
