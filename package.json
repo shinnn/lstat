@@ -29,8 +29,7 @@
     "async"
   ],
   "dependencies": {
-    "graceful-fs": "^4.1.11",
-    "pinkie-promise": "^2.0.1"
+    "graceful-fs": "^4.1.11"
   },
   "devDependencies": {
     "@shinnn/eslint-config-node-legacy": "^3.0.0",
