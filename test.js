@@ -7,7 +7,7 @@ const {Stats} = require('graceful-fs');
 const test = require('tape');
 
 test('lstat()', async t => {
-  t.plan(6);
+  t.plan(7);
 
   const fail = t.fail.bind(t, 'Unexpectedly succeeded.');
 
@@ -30,8 +30,16 @@ test('lstat()', async t => {
   lstat().then(fail, ({message}) => {
     t.strictEqual(
       message,
-      'Expected a file path (string), but got a non-string value undefined.',
+      'Expected 1 argument (string), but got no arguments instead.',
       'should fail when it takes no arguments.'
+    );
+  });
+
+  lstat('a', 'b').then(fail, ({message}) => {
+    t.strictEqual(
+      message,
+      'Expected 1 argument (string), but got 2 arguments instead.',
+      'should fail when it takes too many arguments.'
     );
   });
 
