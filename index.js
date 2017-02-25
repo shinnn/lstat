@@ -4,9 +4,8 @@
 */
 'use strict';
 
+const fsLstat = require('fs').lstat;
 const {inspect} = require('util');
-
-const fsLstat = require('graceful-fs').lstat;
 
 module.exports = function lstat(...args) {
   const argLen = args.length;

@@ -3,7 +3,7 @@
 const createSymlink = require('create-symlink');
 const lstat = require('.');
 const rmfr = require('rmfr');
-const {Stats} = require('graceful-fs');
+const {Stats} = require('fs');
 const test = require('tape');
 
 test('lstat()', async t => {
